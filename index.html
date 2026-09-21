@@ -1,20 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  
+  <!-- Título e ícono visibles en la pestaña del navegador -->
+  <title>Mi Sitio Personal</title>
+  <link rel="icon" href="https://carrd.co/assets/images/favicon.png" type="image/png">
 
-  <title>Repo del Dark!</title>
+  <!-- Meta etiquetas básicas para SEO y redes sociales -->
+  <meta name="description" content="Bienvenido a mi sitio web personal.">
+  <meta property="og:title" content="Mi Sitio Personal">
+  <meta property="og:description" content="Bienvenido a mi sitio web personal.">
+  <meta property="og:type" content="website">
+
+  <style>
+    /* Eliminamos márgenes, bordes y barras de scroll del documento raíz */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Evita la doble barra de desplazamiento */
+      background-color: #ffffff; /* Ajusta este color al fondo de tu Carrd */
+    }
+
+    /* El contenedor principal ocupa exactamente toda la pantalla del dispositivo */
+    .iframe-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Ajustes específicos para iOS/Safari para asegurar el desplazamiento fluido */
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      -webkit-overflow-scrolling: touch;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Te doy la bienvenida!</h1>
-  </header>
-  <main>
-    <h2>Este es un sitio de bienvenida para mi repositorio</h2>
-    <p>Es una página responsiva que enlaza a los proyectos que iré realizando en la medida que voy aprendiendo</p>
-    <a href="./challenge-amigo-secreto_esp-main/index.html">Challenge Amigo Secreto</a>
-  </main>
+
+  <div class="iframe-container">
+    <!-- Reemplaza la URL src por la dirección real de tu sitio en Carrd -->
+    <iframe 
+      id="carrd-frame"
+      src="https://TU-SITIO.carrd.co" 
+      title="Sitio Web Personal"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
 </body>
 </html>
