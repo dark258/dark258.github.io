@@ -536,7 +536,7 @@
                 </symbol>
             </defs>
         </svg>
-        <script>
+<script>
             (function() {
                 var on = addEventListener
                   , $ = function(q) {
@@ -654,32 +654,24 @@
                     },
                     splitWords: function(x) {
                         var textNode = x.childNodes[0]
-                          , text = textNode.nodeValue
-                          , words = text.split(' ')
-                          , w = '';
+                          , text = textNode ? textNode.nodeValue : ''
+                          , words = text ? text.split(' ') : []
+                          , wHtml = '';
 
                         words.forEach(function(word) {
-                            w += '<span>' + escapeHtml(word) + '</span> ';
+                            wHtml += '<span>' + escapeHtml(word) + '</span> ';
                         });
 
-                        w = w.trim();
+                        wHtml = wHtml.trim();
 
-                        if (words.length > 1) {
-                            var w2 = document.createElement('text-node');
-                            w2.innerHTML = w;
+                        if (words.length > 0) {
+                            var w2 = document.createElement('span');
+                            w2.innerHTML = wHtml;
                             x.replaceWith(w2);
                             while (w2.childNodes.length > 0) {
                                 w2.parentNode.insertBefore(w2.childNodes[0], w2);
                             }
                             w2.parentNode.removeChild(w2);
-                        } else {
-                            var w = document.createElement('text-node');
-                            w.innerHTML = s;
-                            x.replaceWith(w);
-                            while (w.childNodes.length > 0) {
-                                w.parentNode.insertBefore(w.childNodes[0], w);
-                            }
-                            w.parentNode.removeChild(w);
                         }
                     },
                 };
